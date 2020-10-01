@@ -1,17 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import "bootstrap/dist/css/bootstrap.min.css";
 
-ReactDOM.render(
-  <React.StrictMode>
+import React from "react";
+
+//This import creates a const called render that references react-dom's render function
+/*
+This would be equivalent to:
+import ReactDom from "react-dom";
+const render = ReactDom.render;
+*/
+import { render } from "react-dom";
+import App from "./components/App";
+import { BrowserRouter as Router } from "react-router-dom";
+
+render(
+  <Router>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </Router>,
+  document.getElementById("root")
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
